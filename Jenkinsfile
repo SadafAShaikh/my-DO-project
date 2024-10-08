@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy to Tomcat') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://localhost:8085/')], war: '**/target/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'admin', path: 'my-DO-project', url: 'http://localhost:8085/')], war: '**/target/*.war'
             }
         }
     }
